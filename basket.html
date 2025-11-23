@@ -106,7 +106,7 @@
             function renderBasketItems() {
                 basketItemsContainer.innerHTML = '';
                 if (basket.length === 0) {
-                    basketItemsContainer.innerHTML = `<div class="empty-basket"><p>Your basket is empty.</p><a href="index.html" class="checkout-btn" style="text-decoration: none;">Continue Shopping</a></div>`;
+                    basketItemsContainer.innerHTML = `<div class="empty-basket"><p>Your basket is empty.</p><a href="home.html" class="checkout-btn" style="text-decoration: none;">Continue Shopping</a></div>`;
                 } else {
                     basket.forEach((item, index) => {
                         const itemHTML = `
@@ -193,3 +193,4 @@ checkoutButton.addEventListener('click', (event) => {
     </script>
 </body>
 </html>
+
