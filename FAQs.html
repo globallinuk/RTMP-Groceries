@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | RTMP Groceries Help Center</title>
+    <link rel="stylesheet" href="FAQs.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="faq-hero">
+        <div class="hero-content">
+            <h1>Help Center</h1>
+            <p class="hero-subtitle">Have questions? We're here to help. Find answers to our most frequently asked questions below.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="faq-container">
+            <h2 class="faq-category-title">Ordering & Products</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">How do I place an order?</button>
+                    <div class="faq-answer">
+                        <p>Placing an order is simple! Just browse our website, add items to your cart, proceed to checkout, enter your delivery address, and choose your payment method. You'll receive a confirmation once the order is placed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I schedule an order for a later time?</button>
+                    <div class="faq-answer">
+                        <p>Yes! During checkout, you can select our "Scheduled Delivery" option to choose a specific date and time slot that is convenient for you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What happens if an item I ordered is out of stock?</button>
+                    <div class="faq-answer">
+                        <p>In the rare event that an item is out of stock, our team will contact you to suggest a suitable replacement. If you're not happy with the replacement, we will remove the item from your order and you won't be charged for it.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="faq-category-title">Delivery</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">What are your delivery hours and fees?</button>
+                    <div class="faq-answer">
+                        <p>We deliver from 7 AM to 10 PM every day. Delivery is free for all orders above ₹500. A small delivery fee of ₹40 is applied to orders below that amount.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How fast is your "instant" delivery?</button>
+                    <div class="faq-answer">
+                        <p>Our lightning-fast delivery network aims to get your groceries to your doorstep often within minutes of placing an order. The exact time can vary based on your location and current order volume, but we always prioritize speed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How can I track my order?</button>
+                    <div class="faq-answer">
+                        <p>Once your order is dispatched, you will receive a tracking link via SMS and on the app. You can use this link to see the live location of your delivery executive.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="faq-category-title">Payments & Refunds</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">What payment methods do you accept?</button>
+                    <div class="faq-answer">
+                        <p>We accept all major payment methods, including Credit & Debit Cards, UPI (GPay, PhonePe, etc.), Net Banking, and major mobile wallets. We also offer Cash on Delivery (COD).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What is your refund policy?</button>
+                    <div class="faq-answer">
+                        <p>We have a "no questions asked" refund and return policy. If you're unhappy with the quality of any item, you can report it to our customer service within 24 hours of delivery for a full refund to your original payment source or wallet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="cta-section">
+            <h2>Still can't find your answer?</h2>
+            <p>Our customer support team is always ready to help. Get in touch with us!</p>
+            <a href="#" class="cta-button">Contact Support</a>
+        </section>
+    </main>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                // First, close all other active items
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+                        otherQuestion.classList.remove('active');
+                        otherQuestion.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+                
+                // Then, toggle the clicked item
+                const isActive = question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                if (isActive) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

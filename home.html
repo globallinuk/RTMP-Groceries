@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTMP Groceries</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="logo-container">
+                <a><h1>RTMP Groceries</h1></a>
+            </div>
+            <form class="search-container" id="search-form">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for Products..." id="search-input">
+            </form>
+            <div class="header-right">
+                <div class="delivery-info">
+                    <i class="fas fa-bolt"></i>
+                    <div><span>Delivery in 5 mins</span></div>
+                </div>
+                
+                <a href="basket.html" class="cart-icon">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <button class="category-btn">Shop by Category <i class="fas fa-chevron-down"></i></button>
+            <ul class="nav-links">
+                <li><a href="Fresh Fruits.html">Exotic Fruits </a></li>
+                <li><a href="Fresh Fruits.html">Apple</a></li>
+                <li><a href="Fresh Fruits.html">Mango</a></li>
+                <li><a href="Fresh Fruits.html">Strawberries</a></li>
+                <li><a href="home.html">Fresh Vegetables</a></li>
+                <li><a href="Fresh Fruits.html"><i class="fas fa-angle-double-right"></i></a></li>
+            </ul>
+            <div class="nav-utils">
+                <a href="basket.html" class="util-link"><i class="fas fa-redo-alt"></i> Smart Basket</a>
+                <a href="#" class="util-link"><i class="fas fa-tags"></i> Offers</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="promo-categories">
+            <a href="#" class="promo-btn">Smart Market, Smarter Choices</a>
+            <a href="#" class="promo-btn promo-btn-special">Transparency at Your Fingertips</a>
+            <a href="#" class="promo-btn">BUY MORE SAVE MORE</a>
+            <a href="#" class="promo-btn">DEALS OF THE WEEK</a>
+            <a href="#" class="promo-btn">COMBO STORE</a>
+        </section>
+
+        <section class="product-section">
+            <div class="section-header">
+                <h2 class="section-title">My Smart Basket</h2>
+                <div class="section-controls">
+                    <a href="#" class="view-all-link">View All</a>
+                    <button class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/onion.jpg" alt="Capsicum"></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Onion ( कांदा )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg"   data-price="25" data-old-price="30">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹25</span><del class="old-price">₹30</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag">Farm Fresh! <i class="fas fa-chevron-down"></i></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn" >Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/Potato.jpg" alt="Carrot"></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Potato ( बटाटा )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="30" data-old-price="40">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹30</span><del class="old-price">₹40</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag">Farm Fresh! <i class="fas fa-chevron-down"></i></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/Tomato.jpg" alt="Carrot"></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Tomato ( टोमॅटो )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="15" data-old-price="20">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹15</span><del class="old-price">₹20</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag">Farm Fresh! <i class="fas fa-chevron-down"></i></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/Brinjal.jpg" alt="Coriander"></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Brinjal ( वांगे )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="60" data-old-price="80">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹60</span><del class="old-price">₹80</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="top-offers-section">
+            <h2 class="section-title">Top Offers</h2>
+            <div class="offers-grid">
+                <a href="#" class="offer-card"><div class="offer-card-top"><span class="offer-text">DEALS OF<br>THE WEEK</span></div><div class="offer-card-bottom"><span>View offers ></span></div></a>
+                <a href="#" class="offer-card"><div class="offer-card-top"><span class="offer-text">BIG PACK<br>BIGGER DISCOUNTS</span></div><div class="offer-card-bottom"><span>View offers ></span></div></a>
+                <a href="#" class="offer-card"><div class="offer-card-top"><span class="offer-text">COMBOS<br>YOU CAN'T MISS</span></div><div class="offer-card-bottom"><span>View offers ></span></div></a>
+                <a href="#" class="offer-card"><div class="offer-card-top"><span class="offer-text">THE<br>₹30 CORNER</span></div><div class="offer-card-bottom"><span>View offers ></span></div></a>
+            </div>
+        </section>
+
+        <section class="product-section">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Bought</h2>
+                <div class="section-controls">
+                    <a href="#" class="view-all-link">View All</a>
+                    <button class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="product-grid">
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="image/Ginger.jpg" alt="Onion"><div class="discount-tag">53% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Ginger ( आले )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="30" data-old-price="40" selected>1 kg</option>
+                           
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹30</span><del class="old-price">₹40</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/Green Chilli.jpg" alt="Tomato"></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Green Chilli ( हिरवी मिरची )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="35" data-old-price="40" selected>1 kg</option>
+                           
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹35</span><del class="old-price">₹40</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRvMI7rECJnRuc6apkEctNhr4SM6ajhIxfU4itXH613bG566Y9k9h8svwj-QZhyPbpw7mshxSsagtrcBY9SVg&s=19" alt="Potato"><div class="discount-tag">50% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info">
+                            <span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Coriander Leaves ( कोथिंबीर )</h3>
+                        <select class="quantity-selector">
+                           
+                            <option value="1kg" data-price="10" data-old-price="15" selected>1 pc</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹10</span><del class="old-price">₹15</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/Cucumber.jpg" alt="Cucumber"></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Cucumber ( काकडी )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="50" data-old-price="60">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹50</span><del class="old-price">₹60</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Green Peas ( वाटाणा )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="180" data-old-price="200">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹180</span><del class="old-price">₹200</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"><div class="discount-tag">37% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Cluster Beans ( गवार )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="70" data-old-price="80">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹70</span><del class="old-price">₹80</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"><div class="discount-tag">37% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Lady Finger ( भेंडी )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="70" data-old-price="80">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹70</span><del class="old-price">₹80</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"><div class="discount-tag">37% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Bitter Gourd ( कारले )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="50" data-old-price="60">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹50</span><del class="old-price">₹60</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"><div class="discount-tag">37% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Ridge Gourd ( दोडका )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="70" data-old-price="80">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹70</span><del class="old-price">₹80</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"><div class="discount-tag">37% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Bottle Gourd ( दुधी भोपळा )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="15" data-old-price="20">1 pc</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹15</span><del class="old-price">₹20</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"><div class="discount-tag">37% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Cabbage ( कोबी )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="8" data-old-price="10">1 pc</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹8</span><del class="old-price">₹10</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="https://www.bigbasket.com/media/uploads/p/l/40023482_5-fresho-cucumber-english.jpg" alt="Cucumber"><div class="discount-tag">37% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> 5 MINS</span></div>
+                        <h3 class="product-name">Carrot ( गाजर )</h3>
+                        <select class="quantity-selector">
+                            
+                            <option value="1kg" data-price="65" data-old-price="80">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹65</span><del class="old-price">₹80</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+            
+            </div>
+        </section>
+        <section class="daily-staples-section">
+            <h2 class="section-title">Fresh Fruits</h2>
+            <div class="staples-grid">
+                <a href="Fresh Fruits.html" class="staple-card"><img src="image/apple.png" alt="Apple"><p class="staple-card-title">Apple</p></a>
+                <a href="Fresh Fruits.html" class="staple-card"><img src="image/grapes.png" alt="Grapes"><p class="staple-card-title">Grapes</p></a>
+                <a href="Fresh Fruits.html" class="staple-card"><img src="image/mango.png" alt="Mango"><p class="staple-card-title">Mango</p></a>
+                <a href="Fresh Fruits.html" class="staple-card"><img src="image/orange.png" alt="Orange"><p class="staple-card-title">Orange</p></a>
+                <a href="Fresh Fruits.html" class="staple-card"><img src="image/Strawberries.png" alt="Strawberries"><p class="staple-card-title">Strawberries</p></a>
+                <a href="Fresh Fruits.html" class="staple-card"><img src="image/Watermelon.png" alt="Watermelon"><p class="staple-card-title">Watermelon</p></a>
+            </div>
+        </section>
+        <div class="w-full lg:pt-6 xl:pt-8">
+            <div class="undefined info"><h1>RTMP Grocery store</h1>
+             <p>Welcome to RTMP Groceries! In a world that never stops, getting fresh, healthy vegetables shouldn't be a chore. We bring the best of local farms directly to your kitchen, handpicked for quality and delivered in minutes. Skip the traffic and long queues—your daily essentials are now just a click away.</p>
+            <p>At RTMP Groceries, we believe that great meals start with the freshest ingredients. That's why we partner with local farmers to source the highest quality vegetables for you and your family. Every item is carefully selected for peak freshness and flavour, ensuring you get the best, every single time. Experience the farm-to-table difference today.</p>
+            </div>
+            <style>
+                .info h2, .info h1{ color: #202020; margin-bottom:10px; margin-top:10px; font-weight:600; font-size:16px; line-height:20px; }
+                .info { line-height:18px; font-size: 14px; color:#606060; }
+                @media screen and (min-width: 1440px) { .info { line-height:20px; font-size: 16px; } }
+            </style>
+        </div>
+    </main>
+
+    <footer class="site-footer-main">
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="image/yash.png" alt="Circular Image" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 2px solid #3498db;">
+                <h2 class="footer-logo">RTMP Groceries</h2>
+                <p>Quality products delivered to your doorstep in minutes. Your daily needs, sorted.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="Careers.html">Careers</a></li>
+                    <li><a href="slogan.html">Slogans </a></li>
+                    <li><a href="Personal Portfolio.html">Personal Portfolio</a></li>
+                
+                </ul>
+            </div>
+             <div class="footer-column">
+                <h4>Help Center</h4>
+                <ul>
+                    <li><a href="FAQs.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms and conditions.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://mail.google.com/mail/u/0/#sent?compose=CllgCKCCSfwgHXTsHWxXdpCcsLhbHhtDjNJjGRcRCMLwZsDHWcPTBZSNmvwrsnqLwgjBVCHdLqq" target="_blank" rel="noopener noreferrer" title="Go to Gmail">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail Logo" style="width: 100px; height: auto;"></a>
+                    <a href="https://www.instagram.com/yash_surve_143?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RTMP Groceries. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+// --- Initialize the basket from localStorage ---
+        let basket = JSON.parse(localStorage.getItem('basketData')) || [];
+        const cartCountElement = document.querySelector('.cart-count');
+        
+        // Function to update the cart counter in the header
+        function updateCartCount() {
+            const totalItems = basket.length;
+            if (cartCountElement) {
+                cartCountElement.innerText = totalItems;
+                if (totalItems > 0) {
+                    cartCountElement.classList.add('visible');
+                } else {
+                    cartCountElement.classList.remove('visible');
+                }
+            }
+        }
+        
+        // --- Set up functionality for all product cards ---
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            
+            // 1. DYNAMIC PRICE CHANGER LOGIC
+            const quantitySelector = card.querySelector('.quantity-selector');
+            const currentPriceEl = card.querySelector('.current-price');
+            const oldPriceEl = card.querySelector('.old-price');
+
+            if (quantitySelector && currentPriceEl && oldPriceEl) {
+                quantitySelector.addEventListener('change', () => {
+                    const selectedOption = quantitySelector.options[quantitySelector.selectedIndex];
+                    const newPrice = selectedOption.dataset.price;
+                    const newOldPrice = selectedOption.dataset.oldPrice;
+
+                    if (newPrice) currentPriceEl.innerText = `₹${newPrice}`;
+                    if (newOldPrice) oldPriceEl.innerText = `₹${newOldPrice}`;
+                });
+            }
+
+            // 2. ADD TO CART LOGIC
+            const addButton = card.querySelector('.add-btn');
+            if (addButton) {
+                addButton.addEventListener('click', () => {
+                    const productName = card.querySelector('.product-name').innerText;
+                    // Use the most up-to-date price when adding to cart
+                    const productPrice = currentPriceEl.innerText.replace('₹', '');
+                    const productImage = card.querySelector('.card-image-container img').src;
+
+                    const product = {
+                        name: productName,
+                        price: parseFloat(productPrice),
+                        image: productImage,
+                        quantity: 1
+                    };
+
+                    basket.push(product);
+                    localStorage.setItem('basketData', JSON.stringify(basket));
+                    
+                    updateCartCount();
+                    addButton.innerHTML = 'Added <i class="fas fa-check"></i>';
+                    addButton.classList.add('added-to-cart');
+                    addButton.disabled = true;
+                });
+            }
+        });
+
+        // Update the cart count when the page first loads
+        updateCartCount();
+</script>
+
+
+</body>
+</html>

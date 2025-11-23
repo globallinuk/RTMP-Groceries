@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Basket - RTMP Groceries</title>
+    <link rel="stylesheet" href="basket.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="#"><h1>RTMP Groceries</h1><p>Your Daily Fresh Market</p></a>
+            </div>
+            <form class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for Products...">
+            </form>
+            <div class="header-right">
+                <div class="delivery-info"><i class="fas fa-bolt"></i><div><span>Delivery in Minutes</span></div></div>
+                
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+        <nav class="header-nav">
+            
+            <ul class="nav-links">
+                <li><a href="Fresh Fruits.html">Fresh Fruits</a></li>
+                <li><a href="home.html">Fresh Vegitables</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="basket-container">
+        <h1>My Basket</h1>
+        <div class="basket-layout">
+            <div class="basket-items">
+                </div>
+
+            <aside class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal-price">₹0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Charges</span>
+                    <span>₹30.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Amount</span>
+                    <span id="total-price">₹30.00</span>
+                </div>
+                <div >
+                    
+                </div>
+                <a href="payment.html" class="checkout-btn">PROCEED TO CHECKOUT</a>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer-main">
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="image/yash.png" alt="Circular Image" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 2px solid #3498db;">
+                <h2 class="footer-logo">RTMP Groceries</h2>
+                <p>Quality products delivered to your doorstep in minutes. Your daily needs, sorted.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Useful Links</h4>
+                <ul><li><a href="about.html">About Us</a></li><li><a href="Careers.html">Careers</a></li><li><a href="Personal Portfolio.html">Personal Portfolio</a></li></ul>
+            </div>
+            <div class="footer-column">
+                <h4>Help Center</h4>
+                <ul><li><a href="FAQs.html">FAQ</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="terms and conditions.html">Terms and Conditions</a></li></ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://mail.google.com/mail/u/0/#sent?compose=CllgCKCCSfwgHXTsHWxXdpCcsLhbHhtDjNJjGRcRCMLwZsDHWcPTBZSNmvwrsnqLwgjBVCHdLqq" target="_blank" rel="noopener noreferrer" title="Go to Gmail">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail Logo" style="width: 100px; height: auto;"></a>
+                    <a href="https://www.instagram.com/yash_surve_143?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Yash Groceries. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const basketItemsContainer = document.querySelector('.basket-items');
+            const cartCountElement = document.querySelector('.cart-count');
+
+            // Load the basket data from localStorage
+            const basket = JSON.parse(localStorage.getItem('basketData')) || [];
+
+            function renderBasketItems() {
+                basketItemsContainer.innerHTML = '';
+                if (basket.length === 0) {
+                    basketItemsContainer.innerHTML = `<div class="empty-basket"><p>Your basket is empty.</p><a href="home.html" class="checkout-btn" style="text-decoration: none;">Continue Shopping</a></div>`;
+                } else {
+                    basket.forEach((item, index) => {
+                        const itemHTML = `
+                            <div class="basket-item" data-id="${index}" data-price-per-unit="${item.price}">
+                                <div class="item-image"><img src="${item.image}" alt="${item.name}"></div>
+                                <div class="item-details">
+                                    <h3>${item.name}</h3>
+                                </div>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn minus-btn">-</button>
+                                    <input type="number" class="quantity-input" value="${item.quantity}" min="1">
+                                    <button class="quantity-btn plus-btn">+</button>
+                                </div>
+                                <div class="item-price">₹${(item.price * item.quantity).toFixed(2)}</div>
+                                <button class="remove-btn" title="Remove Item"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        `;
+                        basketItemsContainer.insertAdjacentHTML('beforeend', itemHTML);
+                    });
+                }
+                updateTotals();
+            }
+
+            function updateTotals() {
+                let subtotal = 0;
+                basket.forEach(item => {
+                    subtotal += item.price * item.quantity;
+                });
+
+                const deliveryCharge = basket.length > 0 ? 30 : 0;
+                const total = subtotal + deliveryCharge;
+
+                document.getElementById('subtotal-price').textContent = `₹${subtotal.toFixed(2)}`;
+                document.getElementById('total-price').textContent = `₹${total.toFixed(2)}`;
+                document.querySelector('.basket-container h1').textContent = `My Basket (${basket.length} Items)`;
+
+                if (cartCountElement) {
+                    cartCountElement.textContent = basket.length;
+                    cartCountElement.classList.toggle('visible', basket.length > 0);
+                }
+            }
+            
+            basketItemsContainer.addEventListener('click', (event) => {
+                const itemDiv = event.target.closest('.basket-item');
+                if (!itemDiv) return;
+
+                const itemId = parseInt(itemDiv.dataset.id);
+                const quantityInput = itemDiv.querySelector('.quantity-input');
+
+                if (event.target.closest('.plus-btn')) {
+                    basket[itemId].quantity++;
+                }
+                if (event.target.closest('.minus-btn')) {
+                    if (basket[itemId].quantity > 1) basket[itemId].quantity--;
+                }
+                if (event.target.closest('.remove-btn')) {
+                    basket.splice(itemId, 1);
+                }
+
+                localStorage.setItem('basketData', JSON.stringify(basket));
+                renderBasketItems();
+            });
+
+            renderBasketItems();
+        });
+    </script>
+    <script>
+        // --- ADD THIS CODE to the script in basket.html ---
+
+const checkoutButton = document.querySelector('.checkout-btn');
+
+checkoutButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent the link from navigating immediately
+
+    // Get the final total from the page
+    const totalPrice = document.getElementById('total-price').textContent;
+    
+    // Save the total to localStorage
+    localStorage.setItem('paymentAmount', totalPrice);
+
+    // Now, go to the payment page
+    window.location.href = 'payment.html'; 
+});
+    </script>
+</body>
+</html>

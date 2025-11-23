@@ -1,0 +1,138 @@
+/* --- General Body & Font Styles --- */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Standard blue for links */
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Main Layout & Containers --- */
+.page-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 20px;
+}
+.breadcrumbs a {
+    color: #777;
+}
+
+.main-layout {
+    display: flex;
+    gap: 30px;
+}
+
+/* --- Left Sidebar --- */
+.sidebar {
+    flex: 0 0 220px; /* Sidebar with a fixed width */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.sidebar li {
+    margin-bottom: 12px;
+}
+
+.sidebar a {
+    color: #555;
+    text-decoration: none;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #e8f5e9; /* Light green for active link */
+    color: #2dbd1d;
+    font-weight: bold;
+}
+
+
+/* --- Right Content Area --- */
+.content-area {
+    flex: 1; /* Takes up the remaining space */
+}
+
+.content-area h1 {
+    font-size: 24px;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.content-area h2 {
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.email-link {
+    color: #c11fdd;
+    font-weight: bold;
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: #888;
+}
+
+/* --- Accordion for Addresses --- */
+.accordion details {
+    margin-bottom: 5px;
+}
+
+.accordion summary {
+    background-color: #84c225; /* Bigbasket green */
+    color: #fff;
+    padding: 15px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none; /* Removes the default triangle */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+}
+/* Hides default marker for Webkit browsers */
+.accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-content {
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.accordion-content p {
+    margin: 0;
+}

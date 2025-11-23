@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FruityFresh - The Freshest Fruits Delivered</title>
+    <link rel="stylesheet" href="Fresh Fruits.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="#"><h1>RTMP Groceries</h1><p>Fresh Fruits Delivery</p></a>
+            </div>
+            <form class="search-container" id="search-form">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for fresh fruits..." id="search-input">
+            </form>
+            <div class="header-right">
+                <div class="delivery-info">
+                    <i class="fas fa-bolt"></i>
+                    <div><span>Fresh Delivery Today</span></div>
+                </div>
+                
+                <a href="basket.html" class="cart-icon">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <button class="category-btn">Shop by Category <i class="fas fa-chevron-down"></i></button>
+            <ul class="nav-links">
+                <li><a href="#">Tropical Fruits</a></li>
+                <li><a href="#">Berries</a></li>
+                <li><a href="#">Mango</a></li>
+                <li><a href="#">Melons</a></li>
+                <li><a href="home.html">Organic Selection Vegi</a></li>
+                <li><a href="home.html"><i class="fas fa-angle-double-right"></i></a></li>
+            </ul>
+            <div class="nav-utils">
+                <a href="basket.html" class="util-link"><i class="fas fa-redo-alt"></i> Smart Basket</a>
+                <a href="#" class="util-link"><i class="fas fa-tags"></i> Offers</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="promo-categories">
+            <a href="#" class="promo-btn">BEST SELLERS</a>
+            <a href="#" class="promo-btn promo-btn-special">SEASONAL PICKS</a>
+            <a href="#" class="promo-btn">FRUIT COMBOS</a>
+            <a href="#" class="promo-btn">FRESH JUICES</a>
+            <a href="#" class="promo-btn">ORGANIC FRUITS</a>
+        </section>
+        
+
+        <section class="product-section">
+            <div class="section-header">
+                <h2 class="section-title">Fresh Arrivals</h2>
+                <div class="section-controls">
+                    <a href="#" class="view-all-link">View All</a>
+                    <button class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/apple.png" alt="Apple"><div class="discount-tag">15% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> TODAY</span></div>
+                        <h3 class="product-name"> Apple ( सफरचंद )</h3>
+                        <select class="quantity-selector">
+                            <option value="1kg" data-price="100" data-old-price="120" selected>1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹100</span><del class="old-price">₹120</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag">Farm Fresh! <i class="fas fa-chevron-down"></i></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/orange.png" alt="Orange"><div class="discount-tag">15% OFF</div></div>
+                     <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> TODAY</span></div>
+                        <h3 class="product-name">Orange ( संत्रा )</h3>
+                        <select class="quantity-selector">
+                            <option value="1kg" data-price="60" data-old-price="70" selected>1 kg</option>
+                           
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹120</span><del class="old-price">₹140</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag">Farm Fresh! <i class="fas fa-chevron-down"></i></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/Strawberries.png" alt="Strawberries"><div class="discount-tag">20% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> TODAY</span></div>
+                        <h3 class="product-name">Fresh Strawberries ( स्ट्रॉबेरी )</h3>
+                        <select class="quantity-selector">
+                            <option value="1box" data-price="150" data-old-price="185" selected>1 box (200g)</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹150</span><del class="old-price">₹185</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                    <div class="card-image-container"><img src="image/Watermelon.png" alt="Watermelon"><div class="discount-tag">10% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="brand-name">Organic Farm</span><span class="delivery-time"><i class="fas fa-stopwatch"></i> TODAY</span></div>
+                        <h3 class="product-name">Watermelon ( कलिंगड )</h3>
+                        <select class="quantity-selector">
+                            <option value="large" data-price="90" data-old-price="100" selected>1 pc (Large)</option>
+                            <option value="small" data-price="50" data-old-price="60">1 pc (Small)</option>
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹90</span><del class="old-price">₹100</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag-placeholder"></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                <div class="product-card">
+                     <div class="card-image-container"><img src="image/mango.png" alt="Mango"><div class="discount-tag">SEASONAL</div></div>
+                     <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> TODAY</span></div>
+                        <h3 class="product-name">Alphonso Mango ( आंबा )</h3>
+                        <select class="quantity-selector">
+                            <option value="1dozen" data-price="850" data-old-price="1000" selected>1 Dozen</option>
+
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹850</span><del class="old-price">₹1000</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag">Premium Grade <i class="fas fa-chevron-down"></i></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+                 <div class="product-card">
+                    <div class="card-image-container"><img src="image/grapes.png" alt="Grapes"><div class="discount-tag">18% OFF</div></div>
+                    <div class="card-info">
+                        <div class="brand-info"><span class="delivery-time"><i class="fas fa-stopwatch"></i> TODAY</span></div>
+                        <h3 class="product-name">Green Grapes</h3>
+                        <select class="quantity-selector">
+                             <option value="1kg" data-price="110" data-old-price="135">1 kg</option>
+                            
+                        </select>
+                        <div class="card-pricing"><span class="current-price">₹60</span><del class="old-price">₹75</del></div>
+                    </div>
+                    <div class="card-footer"><div class="sasta-tag">Farm Fresh! <i class="fas fa-chevron-down"></i></div><div class="card-actions"><button class="bookmark-btn"><i class="far fa-bookmark"></i></button><button class="add-btn">Add</button></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer-main">
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="image/yash.png" alt="Circular Image" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 2px solid #3498db;">
+                <h2 class="footer-logo">RTMP Groceries</h2>
+                <p>Quality products delivered to your doorstep in minutes. Your daily needs, sorted.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Useful Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="Careers.html">Careers</a></li>
+                    <li><a href="slogan.html">Slogans</a></li>
+                    <li><a href="Personal Portfolio.html">Personal Portfolio</a></li>
+                   
+                </ul>
+            </div>
+             <div class="footer-column">
+                <h4>Help Center</h4>
+                <ul>
+                    <li><a href="FAQs.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    
+                    <li><a href="terms and conditions.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://mail.google.com/mail/u/0/#sent?compose=CllgCKCCSfwgHXTsHWxXdpCcsLhbHhtDjNJjGRcRCMLwZsDHWcPTBZSNmvwrsnqLwgjBVCHdLqq" target="_blank" rel="noopener noreferrer" title="Go to Gmail">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Gmail Logo" style="width: 100px; height: auto;"></a>
+                    <a href="https://www.instagram.com/yash_surve_143?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RTMP Groceries. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+   <script>
+// --- Initialize the basket from localStorage ---
+        let basket = JSON.parse(localStorage.getItem('basketData')) || [];
+        const cartCountElement = document.querySelector('.cart-count');
+        
+        // Function to update the cart counter in the header
+        function updateCartCount() {
+            const totalItems = basket.length;
+            if (cartCountElement) {
+                cartCountElement.innerText = totalItems;
+                if (totalItems > 0) {
+                    cartCountElement.classList.add('visible');
+                } else {
+                    cartCountElement.classList.remove('visible');
+                }
+            }
+        }
+        
+        // --- Set up functionality for all product cards ---
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            
+            // 1. DYNAMIC PRICE CHANGER LOGIC
+            const quantitySelector = card.querySelector('.quantity-selector');
+            const currentPriceEl = card.querySelector('.current-price');
+            const oldPriceEl = card.querySelector('.old-price');
+
+            if (quantitySelector && currentPriceEl && oldPriceEl) {
+                quantitySelector.addEventListener('change', () => {
+                    const selectedOption = quantitySelector.options[quantitySelector.selectedIndex];
+                    const newPrice = selectedOption.dataset.price;
+                    const newOldPrice = selectedOption.dataset.oldPrice;
+
+                    if (newPrice) currentPriceEl.innerText = `₹${newPrice}`;
+                    if (newOldPrice) oldPriceEl.innerText = `₹${newOldPrice}`;
+                });
+            }
+
+            // 2. ADD TO CART LOGIC
+            const addButton = card.querySelector('.add-btn');
+            if (addButton) {
+                addButton.addEventListener('click', () => {
+                    const productName = card.querySelector('.product-name').innerText;
+                    // Use the most up-to-date price when adding to cart
+                    const productPrice = currentPriceEl.innerText.replace('₹', '');
+                    const productImage = card.querySelector('.card-image-container img').src;
+
+                    const product = {
+                        name: productName,
+                        price: parseFloat(productPrice),
+                        image: productImage,
+                        quantity: 1
+                    };
+
+                    basket.push(product);
+                    localStorage.setItem('basketData', JSON.stringify(basket));
+                    
+                    updateCartCount();
+                    addButton.innerHTML = 'Added <i class="fas fa-check"></i>';
+                    addButton.classList.add('added-to-cart');
+                    addButton.disabled = true;
+                });
+            }
+        });
+
+        // Update the cart count when the page first loads
+        updateCartCount();
+</script>
+
+</body>
+</html>

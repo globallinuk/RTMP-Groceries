@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions | RTMP Groceries</title>
+    <link rel="stylesheet" href="terms and conditions.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="terms-hero">
+        <div class="hero-content">
+            <h1>Terms and Conditions</h1>
+            <p class="hero-subtitle">Please read these terms carefully before using our service.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="terms-layout">
+            <aside class="terms-nav">
+                
+                <ul>
+                    <li><a href="#section-1" class="nav-link">1. Agreement to Terms</a></li>
+                    <li><a href="#section-2" class="nav-link">2. User Accounts</a></li>
+                    <li><a href="#section-3" class="nav-link">3. Orders & Payments</a></li>
+                    <li><a href="#section-4" class="nav-link">4. Delivery</a></li>
+                    <li><a href="#section-5" class="nav-link">5. Cancellations & Refunds</a></li>
+                    <li><a href="#section-6" class="nav-link">6. Limitation of Liability</a></li>
+                    <li><a href="#section-7" class="nav-link">7. Governing Law</a></li>
+                    <li><a href="#section-8" class="nav-link">8. Contact Us</a></li>
+                </ul>
+            </aside>
+
+            <section class="terms-content">
+                <p class="last-updated">Last Updated: September 17, 2025</p>
+                
+                <div class="summary-box">
+                    <h4>In Plain English</h4>
+                    <p>By using RTMP Groceries, you agree to these terms. We do our best to deliver high-quality products quickly, but some things (like delivery times) can't always be guaranteed. You are responsible for your account's security. If you have any issues, please contact our support team. We value your trust and business!</p>
+                </div>
+
+                <div id="section-1" class="terms-section">
+                    <h2>1. Agreement to Terms</h2>
+                    <p>By accessing or using the RTMP Groceries website, mobile application, or any other services (collectively, the "Service"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of the terms, then you may not access the Service. This agreement applies to all visitors, users, and others who access the Service.</p>
+                </div>
+
+                <div id="section-2" class="terms-section">
+                    <h2>2. User Accounts</h2>
+                    <p>When you create an account with us, you must provide information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree not to disclose your password to any third party.</p>
+                </div>
+
+                <div id="section-3" class="terms-section">
+                    <h2>3. Orders & Payments</h2>
+                    <p>When you place an order, you agree to provide current, complete, and accurate purchase and account information. We reserve the right to refuse any order you place with us. We may, in our sole discretion, limit or cancel quantities purchased per person or per order. All prices are listed in Indian Rupees (INR) and are subject to change without notice. Payment must be received by us before our acceptance of an order.</p>
+                </div>
+
+                <div id="section-4" class="terms-section">
+                    <h2>4. Delivery</h2>
+                    <p>We will make every effort to deliver your order within the estimated timeframe. However, delivery times are not guaranteed and may be subject to delays due to traffic, weather, or other factors beyond our control. Risk of loss and title for all items ordered pass to you when the item is delivered to the shipping carrier. It is your responsibility to ensure that your delivery address is correct and accessible.</p>
+                </div>
+
+                <div id="section-5" class="terms-section">
+                    <h2>5. Cancellations, Returns, and Refunds</h2>
+                    <p>Our policy on cancellations, returns, and refunds is outlined in our FAQ page and is incorporated into these Terms by reference. Generally, orders may be cancelled before they are dispatched. Due to the perishable nature of our products, returns are only accepted for quality issues reported within 24 hours of delivery. Refunds will be processed to the original method of payment or to your Yash Groceries wallet, at our discretion.</p>
+                </div>
+
+                <div id="section-6" class="terms-section">
+                    <h2>6. Limitation of Liability</h2>
+                    <p>In no event shall Yash Groceries, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+                </div>
+
+                <div id="section-7" class="terms-section">
+                    <h2>7. Governing Law</h2>
+                    <p>These Terms shall be governed and construed in accordance with the laws of India, without regard to its conflict of law provisions. Any disputes will be subject to the exclusive jurisdiction of the courts located in Mumbai, Maharashtra.</p>
+                </div>
+
+                <div id="section-8" class="terms-section">
+                    <h2>8. Contact Us</h2>
+                    <p>If you have any questions about these Terms, please contact us at <a href="https://mail.google.com/mail/u/0/#sent?compose=CllgCKCCSfwgHXTsHWxXdpCcsLhbHhtDjNJjGRcRCMLwZsDHWcPTBZSNmvwrsnqLwgjBVCHdLqq">yashsurve161@gmail.com</a>.</p>
+                    <p><strong>Disclaimer:</strong> This is a template and not legal advice. You should consult with a legal professional to ensure your Terms and Conditions are appropriate for your specific business needs.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <script>
+        // JavaScript for highlighting the active link in the sidebar on scroll
+        const sections = document.querySelectorAll('.terms-section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.4
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>

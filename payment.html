@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #eaf0f6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .gpay-container {
+            width: 100%;
+            max-width: 375px; /* Simulates a phone screen width */
+            background-color: #f7f9fc;
+            border-radius: 24px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gpay-header {
+            background-color: #1a73e8; /* Google's blue */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .gpay-header .merchant-logo {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 24px;
+            color: #84c225;
+        }
+        .gpay-header h4 { margin: 0; font-weight: 400; opacity: 0.8; }
+        .gpay-header h3 { margin: 5px 0 0 0; font-weight: 500; font-size: 18px; }
+
+        .amount-section { 
+            padding: 30px 20px; 
+            text-align: center; 
+            background-color: #fff; 
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .amount-section .amount { font-size: 48px; font-weight: 500; color: #202124; }
+        .amount-section .currency { font-size: 32px; font-weight: 400; color: #5f6368; margin-right: 5px; }
+        
+        /* Styles for the new QR Code section */
+        .qr-code-section {
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .qr-code-section p {
+            margin: 0 0 15px 0;
+            color: #5f6368;
+            font-size: 16px;
+        }
+        .qr-code-section img {
+            max-width: 180px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .pay-button-container { 
+            padding: 20px; 
+            background-color: #f7f9fc;
+            margin-top: auto; /* Pushes the button to the bottom */
+        }
+        .pay-button { 
+            width: 100%; 
+            background-color: #1a73e8; 
+            color: white; 
+            border: none; 
+            padding: 15px; 
+            border-radius: 25px; 
+            font-size: 16px; 
+            font-weight: 500; 
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .pay-button:hover {
+            background-color: #1558b0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gpay-container">
+        <div class="gpay-header">
+            <div class="merchant-logo"><i class="fas fa-shopping-basket"></i></div>
+            <h4>Paying</h4>
+            <h3>RTMP Groceries</h3>
+        </div>
+        
+        <div class="amount-section">
+            <span class="currency">₹</span><span class="amount">0.00</span>
+        </div>
+
+        <div class="qr-code-section">
+            <p>Scan QR Code to Pay</p>
+            <img src="image/QR code.jpg" alt="QR Code">
+        </div>
+
+        <div class="pay-button-container">
+            <button class="pay-button">PROCEED TO PAY</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Retrieve the saved amount from localStorage
+            const savedAmount = localStorage.getItem('paymentAmount');
+            const payButton = document.querySelector('.pay-button');
+
+            if (savedAmount) {
+                // 2. Find the elements on the page that display the amount
+                const amountDisplay = document.querySelector('.amount-section .amount');
+
+                // 3. Update the text with the saved amount
+                // We remove the '₹' symbol to get just the number
+                const amountValue = savedAmount.replace('₹', '');
+                
+                amountDisplay.innerText = amountValue;
+                payButton.innerText = `PROCEED TO PAY ${savedAmount}`;
+            }
+
+            // --- NEW LOGIC: Handle Button Click to go to Success Page ---
+            payButton.addEventListener('click', () => {
+                // 1. Visual Feedback
+                payButton.innerText = "Processing...";
+                payButton.style.backgroundColor = "#555";
+                payButton.disabled = true;
+
+                // 2. Generate a random Order ID (Required for the success page message)
+                const uniqueId = 'RTMP-' + Math.floor(100000 + Math.random() * 900000);
+                localStorage.setItem('confirmedOrderId', uniqueId);
+
+                // 3. Simulate Delay and Redirect
+                setTimeout(() => {
+                    window.location.href = 'success.html';
+                }, 2000); // 2 seconds delay
+            });
+        });
+    </script>
+
+</body>
+</html>

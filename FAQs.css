@@ -1,0 +1,129 @@
+/* ---
+   Styles for Enhanced FAQ Page
+   Add this to the bottom of style-enhanced.css
+--- */
+
+/* --- FAQ HERO BANNER --- */
+.faq-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* --- FAQ LAYOUT & ACCORDION --- */
+.faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.faq-category-title {
+    font-size: 2rem;
+    color: var(--dark-green);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.faq-accordion {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-question:hover {
+    background-color: var(--light-gray);
+}
+
+/* Icon for accordion state (+/-) */
+.faq-question::after {
+    content: '+';
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--primary-green);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    content: '−';
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-answer {
+    background-color: var(--light-gray);
+    overflow: hidden;
+    max-height: 0; /* Initially hidden */
+    transition: max-height 0.4s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+}
+
+.faq-answer p {
+    padding: 20px;
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* --- "STILL NEED HELP?" CTA SECTION --- */
+.cta-section {
+    max-width: 850px;
+    margin: 60px auto 0;
+    background-color: var(--dark-green);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.cta-section h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.cta-section p {
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--dark-green);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-green);
+    color: white;
+}

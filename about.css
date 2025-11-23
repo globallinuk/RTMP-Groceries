@@ -1,0 +1,117 @@
+
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Wrapper Styles */
+.about-section {
+    margin-bottom: 40px;
+}
+
+/* Content Card Styles */
+.content-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    border-left: 5px solid #4CAF50; /* A fresh green accent color */
+}
+
+/* --- Typography --- */
+
+/* Main Section Titles (e.g., "Full 'About Us' Page Content") */
+h2 {
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Headlines (e.g., "About Yash Groceries") */
+h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c5e2e; /* Darker green for main headlines */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Subheadings (e.g., "Our Story") */
+h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* --- List Styling --- */
+
+/* "Why Choose Us" List */
+.features-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.features-list li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Custom bullet points for the features list */
+.features-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #4CAF50; /* Green checkmark */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.features-list strong {
+    color: #333;
+}
+
+/* "Taglines & Slogans" List */
+.slogan-list {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.slogan-list li {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 10px;
+    font-style: italic;
+    position: relative;
+}
+
+/* Thank you message styling */
+.thank-you {
+    font-weight: 600;
+    color: #2c5e2e;
+    margin-top: 25px;
+}

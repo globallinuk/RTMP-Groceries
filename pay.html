@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - RTMP Groceries</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html"><h1>RTMP Groceries</h1><p>Your Daily Fresh Market</p></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="success-wrapper">
+        <div class="success-card">
+            <div class="success-icon-container">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1>Payment Successful!</h1>
+            <p class="success-message">Your payment was received.</p>
+            
+            <div class="order-info">
+                <p>Order ID: <span id="order-id">#Loading...</span></p>
+                <p>Amount Paid: <span id="paid-amount">...</span></p>
+                <p><strong>Please confirm your order on WhatsApp to start delivery.</strong></p>
+            </div>
+
+            <button id="whatsapp-btn" class="continue-shopping-btn" style="background-color: #25D366; width: 100%; border: none; cursor: pointer;">
+                <i class="fab fa-whatsapp"></i> Send Order to Shop Owner
+            </button>
+            
+            <br><br>
+            <a href="index.html" style="color: #888; font-size: 14px;">Return to Home</a>
+        </div>
+    </main>
+
+    <footer class="site-footer-main">
+        <div class="footer-bottom">
+            <p>&copy; 2025 RTMP Groceries. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get Data
+            const randomOrderId = Math.floor(100000 + Math.random() * 900000);
+            const orderId = `#RTMP-${randomOrderId}`;
+            const amount = localStorage.getItem('paymentAmount') || '0';
+            
+            // 2. Display Data
+            document.getElementById('order-id').innerText = orderId;
+            document.getElementById('paid-amount').innerText = `₹${amount.replace('₹', '')}`;
+
+            // 3. WhatsApp Logic
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            
+            whatsappBtn.addEventListener('click', () => {
+                // The Admin's Phone Number (Your Number)
+                const adminNumber = "8856848901"; // 91 is India code
+                
+                // The Message
+                const message = `Hello RTMP Groceries! %0a%0aI have just made a payment. %0aOrder ID: *${orderId}* %0aAmount Paid: *₹${amount.replace('₹', '')}* %0a%0aPlease confirm my order delivery.`;
+                
+                // Open WhatsApp
+                const url = `https://wa.me/${adminNumber}?text=${message}`;
+                window.open(url, '_blank');
+            });
+
+            // 4. Clear Cart Data
+            localStorage.removeItem('basketData');
+            localStorage.removeItem('paymentAmount');
+        });
+    </script>
+
+</body>
+</html>

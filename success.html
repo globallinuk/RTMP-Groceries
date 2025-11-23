@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed - RTMP Groceries</title>
+    <link rel="stylesheet" href="sucsess.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-top">
+            <div class="logo-container">
+                <a href="index.html">
+                    <h1>RTMP Groceries</h1>
+                    <p>Your Daily Fresh Market</p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="success-wrapper">
+        <div class="success-card">
+            <div class="success-icon-container">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h1>Payment Successful!</h1>
+            <p class="success-message">Your payment was received.</p>
+            
+            <div class="order-info">
+                <p>Order ID: <span id="order-id">#Loading...</span></p>
+                <p>Amount Paid: <span id="paid-amount">...</span></p>
+                <p><strong>Please click the button below to send your item list to us.</strong></p>
+            </div>
+
+            <button id="whatsapp-btn" class="continue-shopping-btn" style="background-color: #25D366; width: 100%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <i class="fab fa-whatsapp" style="font-size: 20px;"></i> Send Order to Shop Owner
+            </button>
+            
+            <br><br>
+            <a href="home.html" id="home-link" style="color: #888; font-size: 14px;">Return to Home</a>
+        </div>
+    </main>
+
+    <footer class="site-footer-main">
+        <div class="footer-bottom">
+            <p>&copy; 2025 RTMP Groceries. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. RETRIEVE DATA FROM LOCALSTORAGE
+            let basket = JSON.parse(localStorage.getItem('basketData')) || [];
+            let amount = localStorage.getItem('paymentAmount') || '0';
+            let orderId = localStorage.getItem('confirmedOrderId');
+
+            // 2. FAILSAFE FOR ORDER ID
+            if (!orderId || orderId === 'null' || orderId === '') {
+                const randomId = Math.floor(100000 + Math.random() * 900000);
+                orderId = `RTMP-${randomId}`;
+            }
+            // Clean the ID string
+            orderId = orderId.replace('#', '');
+
+            // 3. DISPLAY DATA ON SCREEN
+            document.getElementById('order-id').innerText = `#${orderId}`;
+            document.getElementById('paid-amount').innerText = `₹${amount.replace('₹', '')}`;
+
+            // 4. BUILD THE ITEM LIST TEXT (ROBUST TO DIFFERENT FIELD NAMES)
+            let itemListText = "";
+
+            if (basket.length > 0) {
+                basket.forEach((item, index) => {
+                    // Try to guess correct property names:
+                    const name =
+                        item.name ||
+                        item.productName ||
+                        item.title ||
+                        "Item";
+
+                    const quantity =
+                        item.quantity ??
+                        item.qty ??
+                        item.count ??
+                        1;
+
+                    itemListText += `${index + 1}. ${name} (Qty: ${quantity})\n`;
+                });
+            } else {
+                itemListText = "No items detected (Direct Payment).\n";
+            }
+
+            // 5. WHATSAPP BUTTON CLICK EVENT
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            
+            whatsappBtn.addEventListener('click', () => {
+                const adminNumber = "918856848901"; 
+                
+                const message =
+                    `*NEW ORDER RECEIVED!* ✅\n` +
+                    `----------------------------\n` +
+                    `🆔 Order ID: *#${orderId}*\n` +
+                    `💰 Paid: *₹${amount.replace('₹', '')}*\n` +
+                    `----------------------------\n` +
+                    `*🛒 ITEMS ORDERED:*\n` +
+                    `${itemListText}` +
+                    `----------------------------\n` +
+                    `Please confirm delivery time.`;
+
+                // Properly encode entire message
+                const encodedMessage = encodeURIComponent(message);
+
+                // Open WhatsApp with encoded text
+                window.open(`https://wa.me/${adminNumber}?text=${encodedMessage}`, '_blank');
+
+                // CLEAR DATA AFTER SENDING
+                setTimeout(() => {
+                    localStorage.removeItem('basketData');
+                    localStorage.removeItem('paymentAmount');
+                    localStorage.removeItem('confirmedOrderId');
+                }, 1000);
+            });
+
+            // Clear data if they click "Return to Home"
+            document.getElementById('home-link').addEventListener('click', () => {
+                localStorage.removeItem('basketData');
+                localStorage.removeItem('paymentAmount');
+                localStorage.removeItem('confirmedOrderId');
+            });
+        });
+    </script>
+
+</body>
+</html>
